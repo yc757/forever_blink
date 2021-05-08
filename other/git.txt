@@ -1,0 +1,72 @@
+pi@04370512:~/Desktop $ sudo apt install git
+正在讀取套件清單... 完成
+正在重建相依關係          
+正在讀取狀態資料... 完成
+git is already the newest version (1:2.11.0-3+deb9u7).
+The following package was automatically installed and is no longer required:
+  realpath
+Use 'sudo apt autoremove' to remove it.
+升級 0 個，新安裝 0 個，移除 0 個，有 3 個未被升級。
+pi@04370512:~/Desktop $ cd blink/
+pi@04370512:~/Desktop/blink $ cd ..
+pi@04370512:~/Desktop $ python3 temperature.py
+按下 Ctrl-C 可以中斷程式
+溫度為攝氏 28.19 度，華氏 82.74 度
+溫度為攝氏 27.81 度，華氏 82.06 度
+^C關閉程式
+pi@04370512:~/Desktop $ cd blink/
+pi@04370512:~/Desktop/blink $ git init
+Initialized empty Git repository in /home/pi/Desktop/blink/.git/
+pi@04370512:~/Desktop/blink $ git add .
+pi@04370512:~/Desktop/blink $ git log
+fatal: your current branch 'master' does not have any commits yet
+pi@04370512:~/Desktop/blink $ git commit -a
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'pi@04370512.(none)')
+pi@04370512:~/Desktop/blink $ ^C
+pi@04370512:~/Desktop/blink $ git config --global user.email "06370136@me.mcu.edu.tw"
+pi@04370512:~/Desktop/blink $ ^C
+pi@04370512:~/Desktop/blink $ git config --global user.name "twtpbill"
+pi@04370512:~/Desktop/blink $ git commit -a
+[master (root-commit) 7c7af51] -create blink project
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 blink.py
+pi@04370512:~/Desktop/blink $ git commit -a
+On branch master
+nothing to commit, working tree clean
+pi@04370512:~/Desktop/blink $ git log
+commit 7c7af51be9b6123386432a1799e41ccc3be3b766
+Author: twtpbill <06370136@me.mcu.edu.tw>
+Date:   Sat May 8 13:36:54 2021 +0800
+
+    -create blink project
+pi@04370512:~/Desktop/blink $ git remote add origin https://github.com/twtpbill/forever_blink.git
+pi@04370512:~/Desktop/blink $ git push -u origin master
+Username for 'https://github.com': 06370136@me.mcu.edu.tw
+Password for 'https://06370136@me.mcu.edu.tw@github.com': 
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 216 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/twtpbill/forever_blink.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+pi@04370512:~/Desktop/blink $ git clone https://github.com/twtpbill/forever_blink.git
+Cloning into 'forever_blink'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+pi@04370512:~/Desktop/blink $ cd ..
+pi@04370512:~/Desktop $ cd forever_blink/
+pi@04370512:~/Desktop/forever_blink $ ls
+blink.py
